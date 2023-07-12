@@ -1,0 +1,58 @@
+body {
+  background-color: #f8f9fa;
+}
+.weather-wrapper {
+  background-color: #fff;
+  max-width: 600px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.weather {
+  padding: 30px 40px;
+  border: 3px solid #8c9097;
+  border-radius: 5px;
+}
+.overview {
+  text-align: right;
+}
+.overview h1 {
+  margin: 0;
+}
+.weather li {
+  list-style: none;
+  font-size: small;
+}
+.overviewInfo {
+  padding-top: 15px;
+}
+.overviewTemp {
+  display: flex;
+  padding-top: 15px;
+}
+.overviewTemp h1 {
+  padding-left: 5px;
+}
+.forecastImg {
+  height: 50px;
+}
+.tempCheck {
+  text-align: center;
+}
+.searchBox {
+  padding: 5px 0;
+  margin: 5px 0;
+}
+.searchBox button {
+  background-color: #5a6275;
+  border: 1px #5a6275 solid;
+  border-radius: 0;
+}
+.searchBox button:hover {
+  border: 1px #5a6275 solid;
+  color: #5a6275;
+  background-color: #fff;
+}
+.temperatureLink {
+  text-decoration: none;
+}
