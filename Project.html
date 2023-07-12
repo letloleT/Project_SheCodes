@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🪴Unbeleafable</title>
+
+    <style>
+      body {
+        background: linear-gradient(to top, #76b852, #8dc26f);
+        font-family: "Lucida Sans";
+        text-align: center;
+      }
+      .container {
+        border-radius: 15px;
+        padding: 10px 50px;
+        width: 60%;
+        margin: 15px auto;
+        background-color: #ebf3ef;
+      }
+      img {
+        display: block;
+        margin: 0 auto;
+        height: 300px;
+        border-radius: 15px;
+      }
+      .plantBenefits {
+        list-style: none;
+        padding: 0;
+      }
+      .plantBenefits li {
+        font-size: 15px;
+        font-weight: lighter;
+      }
+      .demo {
+        font-family: monospace;
+        color: #949494;
+        font-size: 18px;
+      }
+      .demo a {
+        color: #949494;
+        text-decoration: none;
+      }
+      .demo a:hover {
+        color: #175a38;
+      }
+
+      .adopt-button {
+        background-color: #fff;
+        font-family: "Lucida Sans";
+        border-width: 2px;
+        box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+        color: #41403e;
+        cursor: pointer;
+        font-size: 1rem;
+        line-height: 23px;
+        padding: 0.75rem;
+        transition: all 235ms ease-in-out;
+      }
+
+      .adopt-button:hover {
+        box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+        transform: translate3d(0, 2px, 0);
+      }
+      span {
+        color: #175a38;
+      }
+      hr {
+        border: none;
+        height: 1px;
+        background-color: #fff;
+      }
+      em {
+        font-weight: 400;
+      }
+      #more {
+        font-size: 15px;
+      }
+      #more a {
+        text-decoration: none;
+        font-weight: bold;
+        color: black;
+        line-height: 25px;
+      }
+      #more a:hover {
+        color: #175a38;
+      }
+      .benefits {
+        font-size: 20px;
+        line-height: 1.5;
+        color: #41403e;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>You <em>Grow</em>🌱 Girl</h1>
+      <h2>Always <span>"Rooting"</span> for You!</h2>
+      <hr />
+      <div>
+        <img
+          src="https://images.pexels.com/photos/9707356/pexels-photo-9707356.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt=""
+        />
+      </div>
+      <div>
+        <p class="benefits">
+          Indoor plants offer many advantages that make them worthwhile
+          additions to any home, and they are a terrific way to add a pop of
+          color and visual interest to your décor. Not only do houseplants
+          improve indoor quality, they also promote healing and stress
+          reduction, develop a connection with nature, and encourage creativity.
+          They can even help with long-term health problems like melancholy and
+          anxiety.
+        </p>
+        <p>🪴🪴🪴</p>
+        <h3>Awesome Benefits of House Plants</h3>
+        <ul class="plantBenefits">
+          <li>Indoor Plants May Help Reduce Stress Levels</li>
+          <li>They Can Help to Purify the air.</li>
+          <li>Add Plants to Your Bedroom for Improved Sleep</li>
+          <li>House Plants Increase Indoor Humidity</li>
+        </ul>
+        <p>🪴🪴🪴</p>
+        <p id="more">
+          Find more interesting benefits of plants. <br />
+          <a href="https://justhouseplants.com/benefits-of-indoor-plants/"
+            >Click me!</a
+          >
+        </p>
+        <button class="adopt-button">
+          Become a plant <strong><span>Mommy</span></strong>
+        </button>
+      </div>
+      <p class="demo">
+        Coded by
+        <a href="https://www.linkedin.com/in/tshepang-letlole-8240b5205"
+          >Tshepang</a
+        >
+      </p>
+    </div>
+    <script>
+      function adopt() {
+        let name = prompt("What is Your Name?");
+        let email = prompt("What is Your Email?");
+        let answer = prompt("Do You want to get some plants?");
+        let theAnswer = answer.toLocaleLowerCase().trim();
+
+        if (theAnswer === "yes") {
+          alert(`Thank you ${name}! We'll be in touch. 😁`);
+        } else {
+          if (theAnswer === "no") {
+            alert(`Thank you ${name}! Maybe another time😊.`);
+          } else {
+            alert(`🪴🪴🪴`);
+          }
+        }
+      }
+      let plantButton = document.querySelector(".adopt-button");
+      plantButton.addEventListener("click", adopt);
+    </script>
+  </body>
+</html>
