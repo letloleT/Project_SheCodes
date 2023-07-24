@@ -78,3 +78,6 @@ citySearch.addEventListener("submit", formSubmit);
 
 let fahrenheitLink = document.querySelector("#fahrenheitTemp");
 fahrenheitLink.addEventListener("click", showFahrenheit);
+
+let celsiusLink = document.querySelector("#celsiusTemp");
+celsiusLink.addEventListener("click", showCelsius);
