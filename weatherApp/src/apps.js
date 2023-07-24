@@ -27,12 +27,15 @@ function showTemperature(response) {
   console.log(response);
   celsiusTemperature = response.data.main.temp;
   // let temperature = Math.round(response.data.main.temp);
+
   let humidity = response.data.main.humidity;
   let windSpeed = Math.round(response.data.wind.speed);
   let description = response.data.weather[0].description;
   let dateElement = document.querySelector("#date");
   let mainIcon = response.data.weather[0].icon;
 
+  let cityElement = document.querySelector("#cityName");
+  cityElement.innerHTML = response.data.name;
   let temperatureElement = document.querySelector("#theTemperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   let humidityElement = document.querySelector("#theHumidity");
@@ -48,18 +51,17 @@ function showTemperature(response) {
     `https://openweathermap.org/img/wn/${mainIcon}@2x.png`
   );
 }
+function search(city) {
+  let apiKey = "1e4caab4527dc113d83cf553f3bdaf2f";
+  let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiURL).then(showTemperature);
+}
 
 function formSubmit(event) {
   event.preventDefault();
-  let city = document.querySelector("#searchCity");
-  let cityName = city.value;
-  let country = document.querySelector("#cityName");
-  country.innerHTML = cityName;
-
-  let apiKey = "1e4caab4527dc113d83cf553f3bdaf2f";
-  let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric`;
-
-  axios.get(`${apiURL}&appid=${apiKey}`).then(showTemperature);
+  let cityElement = document.querySelector("#searchCity");
+  search(cityElement.value);
 }
 
 function showFahrenheit(event) {
@@ -89,3 +91,5 @@ fahrenheitLink.addEventListener("click", showFahrenheit);
 
 let celsiusLink = document.querySelector("#celsiusTemp");
 celsiusLink.addEventListener("click", showCelsius);
+
+search("Tlokweng");
