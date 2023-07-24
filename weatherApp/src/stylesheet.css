@@ -14,6 +14,7 @@
 }
 .overview h1 {
   margin: 0;
+  text-transform: capitalize;
 }
 .overview li {
   text-transform: capitalize;
@@ -31,6 +32,10 @@
 }
 .overviewTemp h1 {
   padding-left: 5px;
+}
+.overviewTemp .active {
+  color: rgb(33, 33, 33);
+  cursor: default;
 }
 .forecastImg {
   height: 50px;
