@@ -29,21 +29,21 @@ function showTemperature(response) {
   let humidity = response.data.main.humidity;
   let windSpeed = Math.round(response.data.wind.speed);
   let description = response.data.weather[0].description;
-  let mainIcon = response.data.weather[0].icon;
   let dateElement = document.querySelector("#date");
-  console.log(dateElement);
+  let mainIcon = response.data.weather[0].icon;
+
   let humidityElement = document.querySelector("#theHumidity");
   humidityElement.innerHTML = humidity;
   let windSpeedElement = document.querySelector("#theWindSpeed");
   windSpeedElement.innerHTML = windSpeed;
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = description;
+  dateElement.innerHTML = setDate(response.data.dt * 1000);
   let mainIconElement = document.querySelector("#mainWeatherIcon");
   mainIconElement.setAttribute(
     "src",
     `https://openweathermap.org/img/wn/${mainIcon}@2x.png`
   );
-  dateElement.innerHTML = setDate(response.data.dt * 1000);
 }
 
 function formSubmit(event) {
@@ -59,7 +59,22 @@ function formSubmit(event) {
   axios.get(`${apiURL}&appid=${apiKey}`).then(showTemperature);
 }
 
+function showFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#theTemperature");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function showCelsius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#theTemperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+let celsiusTemperature = null;
+
 let citySearch = document.querySelector("#findCity");
 citySearch.addEventListener("submit", formSubmit);
 
-setDate();
+let fahrenheitLink = document.querySelector("#fahrenheitTemp");
+fahrenheitLink.addEventListener("click", showFahrenheit);
