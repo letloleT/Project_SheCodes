@@ -43,23 +43,30 @@
         <!-- <h3>Yoo</h3> -->
         <div class="row">
           <div class="col-3 overviewTemp">
-            <img src="images/partlyCloudy.png" class="forecastImg" alt="" />
-            <h1 id="theTemperature">22°C</h1>
-            <!-- <a href="#" class="temperatureLink" id="celsiusTemp">°C</a>|
-            <a href="#" class="temperatureLink" id="fahrenheitTemp">°F</a> -->
+            <img
+              src="images/partlyCloudy.png"
+              class="forecastImg"
+              id="mainWeatherIcon"
+              alt=""
+            />
+            <h1 id="theTemperature">22</h1>
+            <a href="#" class="temperatureLink" id="celsiusTemp">°C</a>|
+            <a href="#" class="temperatureLink" id="fahrenheitTemp">°F</a>
           </div>
           <div class="col-4 overviewInfo">
             <ul>
-              <li>Precipitation: 0%</li>
-              <li id="theHumidity">Humidity: 24%</li>
-              <li id="theWindSpeed">Wind: 13km/h</li>
+              <!-- <li>Precipitation: 0%</li> -->
+              <li>Humidity: <span id="theHumidity">0</span>%</li>
+              <li>Wind: <span id="theWindSpeed">0</span>km/h</li>
             </ul>
           </div>
           <div class="col-5 overview">
             <h1 id="cityName">Gaborone</h1>
             <ul class="overview-list">
-              <li id="currentTime">Wednesday 16:00</li>
-              <li><small>Mostly Sunny</small></li>
+              <li id="date">Wednesday 16:00</li>
+              <li>
+                <span id="description"><small>Mostly Sunny</small></span>
+              </li>
             </ul>
           </div>
         </div>
