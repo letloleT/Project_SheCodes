@@ -1,13 +1,22 @@
+body {
+  background: #ddd6f3;
+}
 .weather-wrapper {
-  max-width: 600px;
   display: block;
-  margin: 0 auto;
-  margin-top: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 30px;
+  box-shadow: 0 10px 25px -7px #f4b0c7;
+}
+.weather-footer {
+  text-align: center;
 }
 .weather {
-  padding: 30px 40px;
-  border: 2px solid #8c9097;
-  border-radius: 5px;
+  margin: 60px auto;
+  max-width: 800px;
+}
+.weatherDetails {
+  margin-top: 20px;
 }
 .overview {
   text-align: right;
@@ -15,13 +24,47 @@
 .overview h1 {
   margin: 0;
   text-transform: capitalize;
+  color: #03001e;
+}
+.overview-list {
+  margin: 0;
+  padding: 0;
+}
+.weather .btn {
+  background: #4a47a3;
+  border: none;
+}
+.theForm {
+  margin: 0 auto;
+  justify-content: center;
+}
+.searchButtons {
+  padding: 10px;
+}
+.overview-list li strong {
+  color: #7303c0;
+}
+hr {
+  color: #f4b0c7;
+}
+.weatherForecast {
+  padding: 30px 0 10px;
+}
+.weather-footer a {
+  color: #7303c0;
 }
 .overview li {
+  color: #878787;
+}
+#description {
   text-transform: capitalize;
+}
+.units {
+  margin: 20px 0;
+  font-weight: 600;
 }
 .weather li {
   list-style: none;
-  font-size: small;
 }
 .overviewInfo {
   padding-top: 15px;
@@ -32,13 +75,16 @@
 }
 .overviewTemp h1 {
   padding-left: 5px;
+  margin: 10px 0;
+  font-size: 60px;
+  color: #03001e;
 }
 .overviewTemp .active {
   color: rgb(33, 33, 33);
   cursor: default;
 }
 .forecastImg {
-  height: 50px;
+  height: 60px;
 }
 .tempCheck {
   text-align: center;
@@ -60,8 +106,17 @@
 .temperatureLink {
   text-decoration: none;
 }
+.searchBox .btn {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
 .codeLink a {
   text-decoration: none;
+}
+.codeLink a:hover {
+  box-shadow: 0 0 25px -7px #f4b0c7;
+  font-weight: 600;
+  transition: all 0.3sec ease-in-out;
 }
 .codeLink {
   padding: 10px 0;
