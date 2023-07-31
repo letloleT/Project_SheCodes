@@ -20,63 +20,68 @@
     <link rel="stylesheet" href="src/stylesheet.css" />
   </head>
   <body>
-    <div class="weather-wrapper">
-      <div class="weather">
-        <form class="row g-3" id="findCity">
-          <div class="input-group searchBox">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Enter a city"
-              id="searchCity"
-            />
-            <button class="btn btn-primary" type="submit">Search</button>
-            <button
-              class="btn btn-primary ms-2"
-              type="button"
-              id="currentLocation"
-            >
-              Current
-            </button>
-          </div>
-        </form>
+    <div class="weather">
+      <div class="container">
+        <div class="weather-wrapper">
+          <form class="row g-3" id="findCity">
+            <div class="input-group searchBox">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter a city"
+                id="searchCity"
+              />
+              <button class="btn btn-primary col-3" type="submit">
+                Search
+              </button>
+            </div>
+          </form>
 
-        <div class="row">
-          <div class="col-3 overviewTemp">
-            <img class="forecastImg" id="mainWeatherIcon" alt="" />
-            <h1 id="theTemperature"></h1>
-            <a href="#" class="temperatureLink active" id="celsiusTemp">°C </a>|
-            <a href="#" class="temperatureLink" id="fahrenheitTemp">°F</a>
+          <div class="row weatherDetails">
+            <div class="col">
+              <div class="overviewTemp">
+                <img id="mainWeatherIcon" alt="" />
+                <h1 id="theTemperature"></h1>
+                <span class="units">
+                  <a href="#" class="temperatureLink active" id="celsiusTemp"
+                    >°C
+                  </a>
+                  |
+                  <a href="#" class="temperatureLink" id="fahrenheitTemp">°F</a>
+                </span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="overview">
+                <h1 id="cityName"></h1>
+                <ul class="overview-list">
+                  <li>Updated: <span id="date"></span></li>
+                  <li>
+                    <span id="description"><small></small></span>
+                  </li>
+                  <li>
+                    Humidity: <strong><span id="theHumidity">0</span>%</strong>,
+                    Wind: <strong><span id="theWindSpeed">0</span>km/h</strong>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div class="col-4 overviewInfo">
-            <ul>
-              <!-- <li>Precipitation: 0%</li> -->
-              <li>Humidity: <span id="theHumidity">0</span>%</li>
-              <li>Wind: <span id="theWindSpeed">0</span>km/h</li>
-            </ul>
-          </div>
-          <div class="col-5 overview">
-            <h1 id="cityName"></h1>
-            <ul class="overview-list">
-              <li>Updated: <span id="date"></span></li>
-              <li>
-                <span id="description"><small></small></span>
-              </li>
-            </ul>
+
+          <div class="weatherForecast" id="forecast"></div>
+          <hr />
+          <div class="weather-footer">
+            <p class="codeLink">
+              <a
+                href="https://github.com/letloleT/Project_SheCodes/tree/main/weatherApp"
+                >Open-source code,</a
+              >
+              By Tshepang
+            </p>
           </div>
         </div>
-
-        <div class="weatherForecast" id="forecast"></div>
       </div>
-      <p class="codeLink">
-        <a
-          href="https://github.com/letloleT/Project_SheCodes/tree/main/weatherApp"
-          >Open-source code,</a
-        >
-        By Tshepang
-      </p>
     </div>
-
     <script src="src/apps.js"></script>
   </body>
 </html>
