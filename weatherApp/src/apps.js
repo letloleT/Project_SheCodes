@@ -23,7 +23,8 @@ function setDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
 
@@ -46,7 +47,13 @@ function displayForecast() {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-
+function getForecast(coordinates) {
+  // console.log(coordinates);
+  let apiKey = "0f8bc384a7c31b717a18cfe38a95ae06";
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  // console.log(apiURL);
+  axios.get(apiURL).then(displayForecast);
+}
 function showTemperature(response) {
   console.log(response);
   celsiusTemperature = response.data.main.temp;
@@ -74,9 +81,10 @@ function showTemperature(response) {
     "src",
     `https://openweathermap.org/img/wn/${mainIcon}@2x.png`
   );
+  getForecast(response.data.coord);
 }
 function search(city) {
-  let apiKey = "1e4caab4527dc113d83cf553f3bdaf2f";
+  let apiKey = "0f8bc384a7c31b717a18cfe38a95ae06";
   let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
   axios.get(apiURL).then(showTemperature);
@@ -117,4 +125,3 @@ let celsiusLink = document.querySelector("#celsiusTemp");
 celsiusLink.addEventListener("click", showCelsius);
 
 search("Tlokweng");
-displayForecast();
