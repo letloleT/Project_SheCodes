@@ -23,6 +23,30 @@ function setDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  let forecastHTML = `<div class="row">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col tempCheck">
+      <div>${day}</div>
+      <img src="images/cloudy.png" class="forecastImg" alt="" />
+      <div class="temperature">
+        <span id="forecast-max-temperature"><strong>18° </strong></span>
+        <span id="forecast-min-temperature">3°</span>
+      </div>
+    </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showTemperature(response) {
   console.log(response);
   celsiusTemperature = response.data.main.temp;
@@ -93,3 +117,4 @@ let celsiusLink = document.querySelector("#celsiusTemp");
 celsiusLink.addEventListener("click", showCelsius);
 
 search("Tlokweng");
+displayForecast();
